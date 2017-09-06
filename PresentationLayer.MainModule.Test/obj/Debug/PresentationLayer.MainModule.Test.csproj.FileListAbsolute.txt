@@ -1,0 +1,1 @@
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule.Test\obj\Debug\PresentationLayer.MainModule.Test.csprojResolveAssemblyReference.cache

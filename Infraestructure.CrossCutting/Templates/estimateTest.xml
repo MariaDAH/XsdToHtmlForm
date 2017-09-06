@@ -1,0 +1,98 @@
+<request>
+   <autenticationData>
+        <gsId value="SGS004100H"/>
+        <gsPwd value="FF3204D32P"/>
+        <customerId value="GTMOTIVE_ES"/>
+        <userId value="interfaz"/>
+   </autenticationData>
+   <requestInfo>
+      <estimate>
+         <operation value="create"></operation>
+         <showGui value="true"/>
+         <estimateInfo>
+            <estimateId value="1555443"></estimateId>
+            <vehicleInfo>
+               <umc value="AU00502" locked="true" />
+               <registrationNumber value="0795FLY" locked="true" />
+               <kilometers value="70000" locked="true"/>
+               <vin value="WAUZZZ8E67A194293" locked="true"/>
+               <equipmentList>
+               <items>
+                  <item>ZESP</item>
+                  <item>IZ12</item>
+                  <item>MTDM</item>
+               </items>
+               <ranks>
+               <rank>
+                  <family>RNG</family>
+                  <subfamily>NCH</subfamily>
+                  <value>2007194293</value>
+               </rank>
+               </ranks>
+               </equipmentList>
+            </vehicleInfo>
+            <userData>
+               <priceByHourList>
+                  <mechanics>
+                     <t1 value="36.00" locked="true"/>
+                     <t2 value="36.00" locked="true"/>
+                     <t3 value="36.00" locked="true"/>
+                  </mechanics>
+                  <body>
+                     <t1 value="36.00" locked="true"/>
+                     <t2 value="36.00" locked="true"/>
+                     <t3 value="36.00" locked="true"/>
+                  </body>
+                  <paint>
+                     <t1 value="36.00" locked="true"/>
+                     <t2 value="36.00" locked="true"/>
+                     <t3 value="36.00" locked="true"/>
+                  </paint>
+                  <electricity>
+                     <t1 value="36.00" locked="true"/>
+                     <t2 value="36.00" locked="true"/>
+                     <t3 value="36.00" locked="true"/>
+                  </electricity>
+                  <trim>
+                     <t1 value="36.00" locked="true"/>
+                     <t2 value="36.00" locked="true"/>
+                     <t3 value="36.00" locked="true"/>
+                  </trim>
+               </priceByHourList>
+               <paint>
+                  <paintSystem value="5" locked="true"/>
+                  <includeCalculation value="false" locked="true"/>
+                  <manualSystem>
+                     <fixAmount value="0" locked="true"/>
+                     <labourAmount value="0" locked="true"/>
+                     <labourTime value="0" locked="true"/>
+                     <materialAmount value="0" locked="true"/>
+                  </manualSystem>
+                  <manufacturerPaint>
+                     <materialHourAmount value="0" locked="true"/>
+                  </manufacturerPaint>
+               </paint>
+               <deductible>
+                  <fixed value="0" locked="true"/>
+                  <percentage value="0" locked="true"/>
+                  <maximum value="0" locked="true"/>
+                  <minimum value="0" locked="true"/>
+               </deductible>
+               <discounts>
+                  <total value="0" locked="true"/>
+                  <parts value="0" locked="true"/>
+                  <labour value="0" locked="true"/>
+                  <paintTotal value="0" locked="true"/>
+                  <paintMaterial value="0" locked="true"/>
+                  <paintLabour value="0" locked="true"/>
+               </discounts>
+            </userData>
+            <lockedAll value="false"/>
+            <functionalGroup value="95000"/>
+         </estimateInfo>
+      <behaviour>
+         <omitResult value="1"></omitResult>
+         <estimateLockedFields>            <action value="SU">               <field value="1" locked="true"/>               <field value="2" locked="true"/>            </action>         </estimateLockedFields>      </behaviour>
+      </estimate>
+   </requestInfo>
+</request>                             

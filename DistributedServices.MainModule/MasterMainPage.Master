@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/MasterMainPage.master.cs" CodeBehind="MasterMainPage.master.cs" Inherits="DistributedServices.MainModule.MasterMainPage" meta:resorcekey="Page" MasterPage="~/MasterPage.Master"%>
+<asp:Content ID="Content_Tittle" ContentPlaceHolderID="ContentPlaceHolder_Tittle" runat="server">
+        <div class="links">
+            <asp:ImageButton ID="btnRequestForm" 
+                             ImageUrl="~/Images/smicn_24.gif" 
+                             runat="server" 
+                             CssClass="requestFormButton" 
+                             OnClick="btnRequestForm_Click" 
+                             meta:resourcekey="btnRequestFormTooltip">
+
+            </asp:ImageButton>
+            <asp:ImageButton ID="btnXmlSource" 
+                             ImageUrl="~/Images/edit_24.gif" 
+                             runat="server" CssClass="xmlSourceButton" 
+                             OnClick="btnXmlSource_Click" 
+                             meta:resourcekey="btnXmlSourceTooltip">
+
+            </asp:ImageButton>                       
+        </div>   
+    </asp:Content>
+      <%--  <!--Content Header-->
+        <div class="contentHeader">
+            <asp:Content ID="Content_Header" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+            </asp:Content>
+        </div> --%>  
+     <%--   <!--Main Content-->
+        <div class="content">
+            <asp:Content ID="Content_Main" ContentPlaceHolderID="ContentPlaceHolder_Main" runat="server">
+
+            </asp:Content>
+        </div> --%>
+  <%--      <!--Content Footer-->
+        <div class="contentFooter">
+            <asp:Content ID="Content_Footer" ContentPlaceHolderID="ContentPlaceHolder_Footer" runat="server">
+                <div id="Div1" runat="server">
+                    <asp:Button ID="BtnSendRequest" 
+                                meta:resourceKey="btnSendRequestResource" 
+                                runat="server" CssClass="buttonStyle" 
+                                OnClick="btnSendRequest_Click"></asp:Button>
+                    <asp:Button ID="BtnExportXml" 
+                                meta:resourceKey="btnExportXmlResource" 
+                                runat="server" CssClass="buttonStyle" 
+                                OnClick="btnExportXml_Click"></asp:Button>            
+                </div>
+            </asp:Content>
+        </div>
+        <!--Body Footer-->
+        <div id="footer">
+            <asp:Localize ID="LclFooter" runat="server" meta:resourcekey="lclFooter" Text="Copyright © 2012 - 2013 Gt Motive" /> 
+        </div>--%>

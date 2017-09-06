@@ -1,0 +1,15 @@
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\Infraestructure.Data.ServiceAgent\bin\Debug\Infraestructure.Data.ServiceAgent.dll
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\Infraestructure.Data.ServiceAgent\bin\Debug\Infraestructure.Data.ServiceAgent.pdb
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.dll
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\bin\Debug\Infraestructure.Data.ServiceAgent.dll
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\bin\Debug\Infraestructure.Data.ServiceAgent.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.csprojResolveAssemblyReference.cache
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.dll
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.pdb
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\bin\Debug\Infraestructure.Data.ServiceAgent.dll
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\bin\Debug\Infraestructure.Data.ServiceAgent.pdb
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.csprojResolveAssemblyReference.cache
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.dll
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\Infraestructure.Data.ServiceAgent\obj\Debug\Infraestructure.Data.ServiceAgent.pdb

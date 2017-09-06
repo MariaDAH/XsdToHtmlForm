@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by AppsPortables.com (AppsPortables.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="estimateIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+  <xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>     
+				  <xs:element name="autenticationData">
+					  <xs:complexType>
+						  <xs:sequence>
+							  <xs:element name="gsId">
+								  <xs:complexType>
+									  <xs:attribute name="value" use="required">
+										  <xs:simpleType>
+											  <xs:restriction base="xs:string">
+												  <xs:minLength value="0"/>
+												  <xs:maxLength value="25"/>
+											  </xs:restriction>
+										  </xs:simpleType>
+									  </xs:attribute>
+								  </xs:complexType>
+							  </xs:element>
+							  <xs:element name="gsPwd">
+								  <xs:complexType>
+									  <xs:attribute name="value" use="required">
+										  <xs:simpleType>
+											  <xs:restriction base="xs:string">
+												  <xs:minLength value="0"/>
+												  <xs:maxLength value="25"/>
+											  </xs:restriction>
+										  </xs:simpleType>
+									  </xs:attribute>
+								  </xs:complexType>
+							  </xs:element>
+							  <xs:element name="customerId">
+								  <xs:complexType>
+									  <xs:attribute name="value" use="required">
+										  <xs:simpleType>
+											  <xs:restriction base="xs:string">
+												  <xs:minLength value="0"/>
+												  <xs:maxLength value="40"/>
+											  </xs:restriction>
+										  </xs:simpleType>
+									  </xs:attribute>
+								  </xs:complexType>
+							  </xs:element>
+							  <xs:element name="userId">
+								  <xs:complexType>
+									  <xs:attribute name="value" use="required">
+										  <xs:simpleType>
+											  <xs:restriction base="xs:string">
+												  <xs:minLength value="0"/>
+												  <xs:maxLength value="40"/>
+											  </xs:restriction>
+										  </xs:simpleType>
+									  </xs:attribute>
+								  </xs:complexType>
+							  </xs:element>
+						  </xs:sequence>
+					  </xs:complexType>
+				  </xs:element>
+				  <xs:element name="requestInfo">
+					  <xs:complexType>
+						  <xs:choice>
+							  <xs:element ref="estimate"/>
+							  <xs:element ref="milestone"/>
+							  <xs:element ref="estimateList"/>
+							  <xs:element ref="partQuery"/>
+						  </xs:choice>
+					  </xs:complexType>
+				  </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="estimate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="operation">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="copy"/>
+											<xs:pattern value="create"/>
+											<xs:pattern value="update"/>
+											<xs:pattern value="read"/>
+											<xs:pattern value="report"/>
+											<xs:pattern value="photoGallery"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="showGui" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="copyEstimate" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="destinationEstimateId">
+								<xs:complexType>
+									<xs:attribute name="value" type="estimateIdType" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="copyMode">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="value" use="required">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:pattern value="P"/>
+														<xs:pattern value="C"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="reportType" minOccurs="0">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="all"/>
+											<xs:pattern value="estimate"/>
+											<xs:pattern value="partList"/>
+											<xs:pattern value="checkList"/>
+											<xs:pattern value="photoReport"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="estimateInfo"/>
+				<xs:element name="behaviour" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="omitResult" minOccurs="0">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="value">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:pattern value="[012]{1}"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="estimateLockedFields" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="action">
+											<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+													<xs:element name="field">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:pattern value="[12]{1}"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="value" type="xs:string" use="required" fixed="SU"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="useIntegratedMode" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" type="xs:boolean" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="milestone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="billingCode" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="value">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[0-9]{10}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vin">
+          <xs:complexType>
+            <xs:attribute name="value" type="Vin" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="extendedInfo" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="umc" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="value" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="equipmentList" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="equipment" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ranks" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="rank" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="value" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0"/>
+                              <xs:maxLength value="10"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="subfamilyCode" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="estimateList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="billingCode" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="[0-9]{10}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dateAddedFrom" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:date" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dateAddedTo" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:date" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="partQuery">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="operation">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="create"/>
+											<xs:pattern value="read"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="queryInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="estimateInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="billingCode" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="[0-9]{10}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="estimateId">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" type="estimateIdType" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="vehicleInfo" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="umc" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="7"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="locked" type="xs:boolean" default="false"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="registrationNumber" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="locked" type="xs:boolean" default="false"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="kilometers" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="[0-9]{0,7}(\.[0-9][0-9]?)?"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="locked" type="xs:boolean" default="false"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="vin" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" type="Vin" use="required"/>
+									<xs:attribute name="locked" type="xs:boolean" default="false"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="equipmentList" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="items" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="item" maxOccurs="unbounded">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="4"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ranks" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="rank" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="family">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="3"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="subfamily">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="3"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="value">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="30"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="userData" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="priceByHourList" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="mechanics" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="t1" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t2" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t3" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="body" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="t1" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t2" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t3" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="paint" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="t1" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t2" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t3" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="electricity" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="t1" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t2" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t3" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="trim" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="t1" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t2" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="t3" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="paint" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="paintSystem" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+															<xs:enumeration value="3"/>
+															<xs:enumeration value="4"/>
+															<xs:enumeration value="5"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="includeCalculation" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="manualSystem" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fixAmount" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="labourAmount" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="labourTime" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="materialAmount" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="manufacturerPaint" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="materialFinishType" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="1"/>
+																		<xs:enumeration value="2"/>
+																		<xs:enumeration value="3"/>
+																		<xs:enumeration value="4"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="materialHourAmount" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="Double" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="parts" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="fareToApply" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="alternativeSparePart" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="aftSupplier" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="value" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="all" type="xs:boolean" default="false"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="alternativeSpareUse" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="1"/>
+															<xs:pattern value="2"/>
+															<xs:pattern value="3"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="auxiliarOperations" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+															<xs:enumeration value="3"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="anticorrosionMaterial" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="undersidePaintMaterial" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="smallPartAmount" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="smallPartPercentage" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="sparePartDeliveryCost" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="sparePartPriceIncrement" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="deductible" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="fixed" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="percentage" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="maximum" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="minimum" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="tax" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="deleteTax" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="taxType" minOccurs="0">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="vat">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:pattern value="17.5"/>
+																		<xs:pattern value="17.50"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="iva">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:pattern value="7"/>
+																		<xs:pattern value="16"/>
+																		<xs:pattern value="20"/>
+																		<xs:pattern value="8"/>
+																		<xs:pattern value="18"/>
+																		<xs:pattern value="21"/>
+																		<xs:pattern value="14"/>
+																		<xs:pattern value="23"/>
+																		<xs:pattern value="10"/>
+                                    <xs:pattern value="10"/>
+																		<xs:pattern value="15"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="igic">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:pattern value="5"/>
+                                    <xs:pattern value="7"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="tva">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:pattern value="19,6"/>
+																		<xs:pattern value="19,60"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="taxValue" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="type" type="xs:string" use="required"/>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="estimateAtributes" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="reference" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="state" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="observations" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="250"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="configurableValueList" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="field1" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fieldName">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="40"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="fieldValue">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="70"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="field2" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fieldName">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="40"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="fieldValue">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="70"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="field3" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fieldName">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="40"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="fieldValue">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="70"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="field4" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fieldName">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="40"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="fieldValue">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="70"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="field5" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fieldName">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="40"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="fieldValue">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="70"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="vehicleAttributes" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="kilometers" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="[0-9]{1,9}"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="vehicleState" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="code" type="xs:string" use="optional"/>
+												<xs:attribute name="value" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="75"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="accidentDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="registrationDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="entryDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="exitDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="firstVisitDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="secondVisitDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="thirdVisitDate" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:date" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="originalPurchase" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="updatedPurchase" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="remainsValue" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="marketValue" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="Double" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="colour" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="code" type="xs:string" use="optional"/>
+												<xs:attribute name="value" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="totalLoss" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="code" type="xs:string" use="optional"/>
+												<xs:attribute name="value" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="dangerousnessCriteria" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="criteria" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="value" type="xs:int"/>
+															<xs:attribute name="checked" type="xs:boolean" use="optional" default="true"/>
+															<xs:attribute name="locked" type="xs:boolean" use="optional" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="economicallyReparable" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="technicallyReparable" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="vehicleDamages" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="general" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="roof" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="underside" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="rearLeft" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="rear" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="rearRight" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="lateralLeft" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="lateralRight" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="frontLeft" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="front" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="frontRight" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="discounts" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="total" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="parts" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="labour" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="paintTotal" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="paintMaterial" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="paintLabour" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="jobDiscounts" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="mechanics" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="sheet" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="paint" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="electricity" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="trim" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="allJobs" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="check" type="xs:boolean" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="partTypeDiscounts" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="partDiscountList" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="entityDiscounts" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="partDiscount" minOccurs="0" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="type">
+																							<xs:complexType>
+																								<xs:attribute name="value" type="xs:int" use="required"/>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="value">
+																							<xs:complexType>
+																								<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="entityId" type="xs:string" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="allParts" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+															<xs:attribute name="check" type="xs:boolean" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="paintMaterialLine" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="PercentTo100WithNegatives" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+              <xs:element name="reports" minOccurs="0">
+                <xs:complexType/>
+              </xs:element>
+							<xs:element name="wasteManagement" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="oil" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="rateType">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" use="optional" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="rateValue" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="tyre" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="rateType">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" use="optional" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="tyreTypology" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="rateValue" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="severalWaste" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="rateValue">
+														<xs:complexType>
+															<xs:attribute name="value" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="locked" type="xs:boolean" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="tyres" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="leftFrontTyre" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="make" minOccurs="0"/>
+													<xs:element ref="model" minOccurs="0"/>
+													<xs:element ref="size" minOccurs="0"/>
+													<xs:element ref="wear" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="rightFrontTyre" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="make" minOccurs="0"/>
+													<xs:element ref="model" minOccurs="0"/>
+													<xs:element ref="size" minOccurs="0"/>
+													<xs:element ref="wear" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="leftRearTyre" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="make" minOccurs="0"/>
+													<xs:element ref="model" minOccurs="0"/>
+													<xs:element ref="size" minOccurs="0"/>
+													<xs:element ref="wear" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="rightRearTyre" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="make" minOccurs="0"/>
+													<xs:element ref="model" minOccurs="0"/>
+													<xs:element ref="size" minOccurs="0"/>
+													<xs:element ref="wear" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="spareTyre" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="make" minOccurs="0"/>
+													<xs:element ref="model" minOccurs="0"/>
+													<xs:element ref="size" minOccurs="0"/>
+													<xs:element ref="wear" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="functionality" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="viewPrecalculation" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:boolean" use="required"/>
+												<xs:attribute name="locked" type="xs:boolean" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="mode" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="value" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(query|complete)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="locked" type="xs:boolean" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="lockedAll" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="functionalGroup" minOccurs="0"/>
+				<xs:element name="operationList" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="activator" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="queryInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="billingCode" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="[0-9]{10}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="idPartQuery" minOccurs="0">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="80"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="vehicleInfo" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="umc" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="7"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="locked" type="xs:boolean" default="false"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="vin" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="value" type="Vin" use="required"/>
+									<xs:attribute name="locked" type="xs:boolean" default="false"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="lockedAll" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="functionalGroup" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Double">
+		<xs:annotation>
+			<xs:documentation>flotantes con 5 dígitos y dos decimales como máximo</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,7}([\.|,][0-9]{1,2})?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Vin">
+		<xs:annotation>
+			<xs:documentation>alfanumérico de 17 dígitos</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[abcdefghjklmnprstuvwxyzABCDEFGHJKLMNPRSTUVWXYZ0123456789]{17}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PercentTo100WithNegatives">
+		<xs:annotation>
+			<xs:documentation>Valor porcentual entre 0 y 100</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="-?[0-9]{1,2}([.|,][0-9]{1,2})?"/>
+			<xs:pattern value="100"/>
+			<xs:pattern value="-100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PercentTo100">
+		<xs:annotation>
+			<xs:documentation>Valor porcentual entre 0 y 100</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,2}([.|,][0-9]{1,2})?"/>
+			<xs:pattern value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="functionalGroup">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="value" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="99B00"/>
+								<xs:pattern value="99A00"/>
+								<xs:pattern value="97000"/>
+								<xs:pattern value="53000"/>
+								<xs:pattern value="59000"/>
+								<xs:pattern value="MG000"/>
+								<xs:pattern value="MF000"/>
+								<xs:pattern value="ME000"/>
+								<xs:pattern value="MD000"/>
+								<xs:pattern value="MC000"/>
+								<xs:pattern value="MB000"/>
+								<xs:pattern value="MA000"/>
+								<xs:pattern value="99000"/>
+								<xs:pattern value="98000"/>
+								<xs:pattern value="96000"/>
+								<xs:pattern value="95000"/>
+								<xs:pattern value="93E00"/>
+								<xs:pattern value="93D00"/>
+								<xs:pattern value="93C00"/>
+								<xs:pattern value="93B00"/>
+								<xs:pattern value="93A00"/>
+								<xs:pattern value="93000"/>
+								<xs:pattern value="92D00"/>
+								<xs:pattern value="92C00"/>
+								<xs:pattern value="92B00"/>
+								<xs:pattern value="92A00"/>
+								<xs:pattern value="11000"/>
+								<xs:pattern value="15000"/>
+								<xs:pattern value="17000"/>
+								<xs:pattern value="21000"/>
+								<xs:pattern value="25000"/>
+								<xs:pattern value="31000"/>
+								<xs:pattern value="35000"/>
+								<xs:pattern value="41000"/>
+								<xs:pattern value="45000"/>
+								<xs:pattern value="50000"/>
+								<xs:pattern value="51000"/>
+								<xs:pattern value="52000"/>
+								<xs:pattern value="55000"/>
+								<xs:pattern value="56000"/>
+								<xs:pattern value="57000"/>
+								<xs:pattern value="90000"/>
+								<xs:pattern value="85000"/>
+								<xs:pattern value="72000"/>
+								<xs:pattern value="71000"/>
+								<xs:pattern value="68000"/>
+								<xs:pattern value="67D00"/>
+								<xs:pattern value="67A00"/>
+								<xs:pattern value="67000"/>
+								<xs:pattern value="65G00"/>
+								<xs:pattern value="65E00"/>
+								<xs:pattern value="65C00"/>
+								<xs:pattern value="65A00"/>
+								<xs:pattern value="65000"/>
+								<xs:pattern value="61U00"/>
+								<xs:pattern value="61P00"/>
+								<xs:pattern value="61M00"/>
+								<xs:pattern value="61L00"/>
+								<xs:pattern value="61K00"/>
+								<xs:pattern value="61J00"/>
+								<xs:pattern value="61H00"/>
+								<xs:pattern value="61F00"/>
+								<xs:pattern value="61E00"/>
+								<xs:pattern value="61D00"/>
+								<xs:pattern value="61000"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="make">
+		<xs:annotation>
+			<xs:documentation> marca de neumáticos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="value" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="locked" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="model">
+		<xs:annotation>
+			<xs:documentation> modelo de neumáticos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="value" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="locked" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="size">
+		<xs:annotation>
+			<xs:documentation> medidas de neumáticos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="value" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="locked" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="wear">
+		<xs:annotation>
+			<xs:documentation> desgaste de neumáticos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="value" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="locked" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="activator">
+		<xs:annotation>
+			<xs:documentation>par cupi acción para introducir activadores</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="shortNumber">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="5"/>
+											<xs:maxLength value="5"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="action">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="2"/>
+											<xs:maxLength value="2"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

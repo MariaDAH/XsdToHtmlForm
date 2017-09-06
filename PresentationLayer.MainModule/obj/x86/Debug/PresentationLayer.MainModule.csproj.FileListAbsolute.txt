@@ -1,0 +1,36 @@
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.Properties.Resources.resources
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.exe.config
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.exe
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.pdb
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Domain.MainModule.dll
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.CrossCutting.dll
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.MainModule.dll
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.ServiceAgent.dll
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Domain.MainModule.pdb
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.CrossCutting.pdb
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.MainModule.pdb
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.ServiceAgent.pdb
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.exe
+C:\Documents and Settings\bdesarrollo\Escritorio\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.exe.config
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.exe
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Domain.MainModule.dll
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.CrossCutting.dll
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.MainModule.dll
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.ServiceAgent.dll
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Domain.MainModule.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.CrossCutting.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.MainModule.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\Infraestructure.Data.ServiceAgent.pdb
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.csprojResolveAssemblyReference.cache
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.Properties.Resources.resources
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.csproj.GenerateResource.Cache
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.exe
+E:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.pdb
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\bin\Debug\PresentationLayer.MainModule.exe.config
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.exe
+D:\GtMotive\GTInterfaceWebClient\IWClientForm\PresentationLayer.MainModule\obj\x86\Debug\PresentationLayer.MainModule.pdb

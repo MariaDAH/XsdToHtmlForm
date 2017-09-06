@@ -1,0 +1,59 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="DistributedServices.MainModule.MasterPage" CodeFile="~/MasterPage.Master.cs"%>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemalocation="http://www.w3.org/1999/xhtml http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd">
+<head id="head" runat="server">
+    <title>GTI Interface Web Client</title>
+    <link href="~/Css/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="window">
+        <form id="mainForm" runat="server">
+            <!--Body Header-->
+            <div class="header">
+                <asp:HyperLink ID="LinkTitle" 
+                               runat="server" 
+                               CssClass="title" 
+                               Text="GTI INTERFACE WEB CLIENT" 
+                               NavigateUrl="~/Pages/MainPage.aspx" 
+                               meta:resourcekey="lclPageTitle">
+                </asp:HyperLink>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder_Tittle"
+                                        runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            
+                   <!--Content Header-->
+                <div class="contentHeader">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" 
+                                            runat="server">
+                    </asp:ContentPlaceHolder>
+
+                 <!--Main Content-->
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Main" 
+                                            runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </div> 
+            </div>     
+            <!--Content Footer-->
+            <div class="contentFooter">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder_Footer" 
+                                        runat="server"> 
+                </asp:ContentPlaceHolder>
+            </div>
+      
+         
+            <!--Body Footer-->
+            <div id="footer">
+                <asp:Localize ID="LclFooter" 
+                              runat="server" 
+                              meta:resourcekey="lclFooter" 
+                              Text="Copyright © 2012 - 2013 Gt Motive" /> 
+            </div>
+        </form> 
+     </div>
+</body>
+</html>

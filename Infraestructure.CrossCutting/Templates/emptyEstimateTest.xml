@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <autenticationData>
+    <gsId value="sds" />
+    <gsPwd value="sadasds" />
+    <customerId value="dssad" />
+    <userId value="sadas" />
+  </autenticationData>
+  <requestInfo>
+    <estimate>
+      <operation value="update" />
+      <showGui value="true" />
+      <copyEstimate>
+        <destinationEstimateId value="sadas" />
+        <copyMode value="asdas" />
+      </copyEstimate>
+      <reportType value="partList" />
+      <estimateInfo>
+        <billingCode value="sadasd" />
+        <estimateId value="" />
+        <vehicleInfo>
+          <umc value="" locked="false" />
+          <registrationNumber value="" locked="false" />
+          <kilometers value="" locked="false" />
+          <vin value="" locked="false" />
+          <equipmentList>
+            <items>
+              <item />
+            </items>
+            <ranks>
+              <rank>
+                <family />
+                <subfamily />
+                <value />
+              </rank>
+            </ranks>
+          </equipmentList>
+        </vehicleInfo>
+        <userData>
+          <priceByHourList>
+            <mechanics>
+              <t1 value="" locked="false" />
+              <t2 value="" locked="false" />
+              <t3 value="" locked="false" />
+            </mechanics>
+            <body>
+              <t1 value="" locked="false" />
+              <t2 value="" locked="false" />
+              <t3 value="" locked="false" />
+            </body>
+            <paint>
+              <t1 value="" locked="false" />
+              <t2 value="" locked="false" />
+              <t3 value="" locked="false" />
+            </paint>
+            <electricity>
+              <t1 value="" locked="false" />
+              <t2 value="" locked="false" />
+              <t3 value="" locked="false" />
+            </electricity>
+            <trim>
+              <t1 value="" locked="false" />
+              <t2 value="" locked="false" />
+              <t3 value="" locked="false" />
+            </trim>
+          </priceByHourList>
+          <paint>
+            <paintSystem value="" locked="false" />
+            <includeCalculation value="false" locked="false" />
+            <manualSystem>
+              <fixAmount value="" locked="false" />
+              <labourAmount value="" locked="false" />
+              <labourTime value="" locked="false" />
+              <materialAmount value="" locked="false" />
+            </manualSystem>
+            <manufacturerPaint>
+              <materialFinishType value="" locked="false" />
+              <materialHourAmount value="" locked="false" />
+            </manufacturerPaint>
+          </paint>
+          <parts>
+            <fareToApply value="" locked="false" />
+            <alternativeSparePart all="false" locked="false">
+              <aftSupplier value="" />
+            </alternativeSparePart>
+            <alternativeSpareUse value="" locked="false" />
+            <auxiliarOperations value="" locked="false" />
+            <anticorrosionMaterial value="" locked="false" />
+            <undersidePaintMaterial value="" locked="false" />
+            <smallPartAmount value="" locked="false" />
+            <smallPartPercentage value="" locked="false" />
+            <sparePartDeliveryCost value="" locked="false" />
+            <sparePartPriceIncrement value="" locked="false" />
+          </parts>
+          <deductible>
+            <fixed value="" locked="false" />
+            <percentage value="" locked="false" />
+            <maximum value="" locked="false" />
+            <minimum value="" locked="false" />
+          </deductible>
+          <tax>
+            <deleteTax value="false" locked="false" />
+            <taxType>
+              <vat value="" locked="false" />
+            </taxType>
+            <taxValue type="" value="" locked="false" />
+          </tax>
+          <estimateAtributes>
+            <reference value="" locked="false" />
+            <state value="" locked="false" />
+            <observations value="" locked="false" />
+          </estimateAtributes>
+          <configurableValueList>
+            <field1>
+              <fieldName value="" locked="false" />
+              <fieldValue value="" locked="false" />
+            </field1>
+            <field2>
+              <fieldName value="" locked="false" />
+              <fieldValue value="" locked="false" />
+            </field2>
+            <field3>
+              <fieldName value="" locked="false" />
+              <fieldValue value="" locked="false" />
+            </field3>
+            <field4>
+              <fieldName value="" locked="false" />
+              <fieldValue value="" locked="false" />
+            </field4>
+            <field5>
+              <fieldName value="" locked="false" />
+              <fieldValue value="" locked="false" />
+            </field5>
+          </configurableValueList>
+          <vehicleAttributes>
+            <kilometers value="" locked="false" />
+            <vehicleState code="" value="" locked="false" />
+            <accidentDate value="2013-02-24" locked="false" />
+            <registrationDate value="2013-02-24" locked="false" />
+            <entryDate value="2013-02-24" locked="false" />
+            <exitDate value="2013-02-24" locked="false" />
+            <firstVisitDate value="2013-02-24" locked="false" />
+            <secondVisitDate value="2013-02-24" locked="false" />
+            <thirdVisitDate value="2013-02-24" locked="false" />
+            <originalPurchase value="" locked="false" />
+            <updatedPurchase value="" locked="false" />
+            <remainsValue value="" locked="false" />
+            <marketValue value="" locked="false" />
+            <colour code="" value="" locked="false" />
+            <totalLoss code="" value="" locked="false" />
+            <dangerousnessCriteria locked="false">
+              <criteria value="0" checked="true" locked="false" />
+            </dangerousnessCriteria>
+            <economicallyReparable value="" locked="false" />
+            <technicallyReparable value="" locked="false" />
+          </vehicleAttributes>
+          <vehicleDamages>
+            <general value="false" locked="false" />
+            <roof value="false" locked="false" />
+            <underside value="false" locked="false" />
+            <rearLeft value="false" locked="false" />
+            <rear value="false" locked="false" />
+            <rearRight value="false" locked="false" />
+            <lateralLeft value="false" locked="false" />
+            <lateralRight value="false" locked="false" />
+            <frontLeft value="false" locked="false" />
+            <front value="false" locked="false" />
+            <frontRight value="false" locked="false" />
+          </vehicleDamages>
+          <discounts>
+            <total value="" locked="false" />
+            <parts value="" locked="false" />
+            <labour value="" locked="false" />
+            <paintTotal value="" locked="false" />
+            <paintMaterial value="" locked="false" />
+            <paintLabour value="" locked="false" />
+            <jobDiscounts locked="false">
+              <mechanics value="" locked="false" />
+              <sheet value="" locked="false" />
+              <paint value="" locked="false" />
+              <electricity value="" locked="false" />
+              <trim value="" locked="false" />
+              <allJobs value="" check="false" />
+            </jobDiscounts>
+            <partTypeDiscounts locked="false">
+              <partDiscountList>
+                <entityDiscounts entityId="">
+                  <partDiscount>
+                    <type value="0" />
+                    <value value="" />
+                  </partDiscount>
+                </entityDiscounts>
+              </partDiscountList>
+              <allParts value="" check="false" />
+            </partTypeDiscounts>
+            <paintMaterialLine value="" locked="false" />
+          </discounts>
+          <reports />
+          <wasteManagement>
+            <oil>
+              <rateType value="" locked="false" />
+              <rateValue value="" locked="false" />
+            </oil>
+            <tyre>
+              <rateType value="" locked="false" />
+              <tyreTypology value="" locked="false" />
+              <rateValue value="" locked="false" />
+            </tyre>
+            <severalWaste>
+              <rateValue value="" locked="false" />
+            </severalWaste>
+          </wasteManagement>
+          <tyres>
+            <leftFrontTyre>
+              <make value="" locked="false" />
+              <model value="" locked="false" />
+              <size value="" locked="false" />
+              <wear value="" locked="false" />
+            </leftFrontTyre>
+            <rightFrontTyre>
+              <make value="" locked="false" />
+              <model value="" locked="false" />
+              <size value="" locked="false" />
+              <wear value="" locked="false" />
+            </rightFrontTyre>
+            <leftRearTyre>
+              <make value="" locked="false" />
+              <model value="" locked="false" />
+              <size value="" locked="false" />
+              <wear value="" locked="false" />
+            </leftRearTyre>
+            <rightRearTyre>
+              <make value="" locked="false" />
+              <model value="" locked="false" />
+              <size value="" locked="false" />
+              <wear value="" locked="false" />
+            </rightRearTyre>
+            <spareTyre>
+              <make value="" locked="false" />
+              <model value="" locked="false" />
+              <size value="" locked="false" />
+              <wear value="" locked="false" />
+            </spareTyre>
+          </tyres>
+          <functionality>
+            <viewPrecalculation value="false" locked="false" />
+            <mode value="" locked="false" />
+          </functionality>
+        </userData>
+        <lockedAll value="false" />
+        <functionalGroup value="" />
+        <operationList>
+          <activator>
+            <shortNumber value="" />
+            <action value="" />
+          </activator>
+        </operationList>
+      </estimateInfo>
+      <behaviour>
+        <omitResult value="" />
+        <estimateLockedFields>
+          <action value="">
+            <field value="" locked="false" />
+          </action>
+        </estimateLockedFields>
+        <useIntegratedMode value="false" />
+      </behaviour>
+    </estimate>
+  </requestInfo>
+</request>

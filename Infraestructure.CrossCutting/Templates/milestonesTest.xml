@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <autenticationData>
+    <gsId value="maria" />
+    <gsPwd value="maria" />
+    <customerId value="maria" />
+    <userId value="maria" />
+  </autenticationData>
+  <requestInfo>
+    <milestone>
+      <billingCode value="2222222222" />
+      <vin value="12345678901234567" />
+      <extendedInfo>
+        <umc value="maria" />
+        <equipmentList>
+          <equipment value="maria" />
+        </equipmentList>
+        <ranks>
+          <rank value="maria" subfamilyCode="maria" />
+        </ranks>
+      </extendedInfo>
+    </milestone>
+  </requestInfo>
+</request>
